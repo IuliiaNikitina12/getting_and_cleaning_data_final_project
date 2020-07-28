@@ -73,4 +73,7 @@ colnames(x_set)[2] <- "Activity"
 # for doing this we need to install package reshape2
 library(reshape2)
 ind_data <- melt(x_set, id=c("Subject", "Activity"))
-each_varoiable_data <- dcast(ind_data, Subject + Activity ~ variable, mean)
+avr_for_each_variable_data <- dcast(ind_data, Subject + Activity ~ variable, mean)
+
+#write final data to .txt file
+write.table(avr_for_each_variable_data, "data/final_dataset.txt", row.name=FALSE)
