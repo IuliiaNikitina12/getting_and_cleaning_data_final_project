@@ -37,3 +37,28 @@ colnames(x) <- features
 #extracts only the measurements on the mean and standard deviation for each measurement
 x1 <- x[, grep("[Mm]ean|[Ss]td", colnames(x), value=TRUE)]
 
+#uses descriptive activity names to name the activities in the data set
+# 1. replace numeric values in y set to activity labels
+ for(i in 1:nrow(y)){
+  if(y[i, 1] == 1) {
+    y[i, 1] <- activity[1, 2]
+  }
+  if(y[i, 1] == 2) {
+    y[i, 1] <- activity[2, 2]
+  }
+  if(y[i, 1] == 3) {
+    y[i, 1] <- activity[3, 2]
+  }
+  if(y[i, 1] == 4) {
+    y[i, 1] <- activity[4, 2]
+  }
+  if(y[i, 1] == 5) {
+    y[i, 1] <- activity[5, 2]
+  }
+  if(y[i, 1] == 6) {
+    y[i, 1] <- activity[6, 2]
+  }
+ }
+# 2. merge y and x sets
+x_set <- cbind(y, x)
+
