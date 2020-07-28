@@ -30,5 +30,10 @@ x <- rbind(x_train, x_test)
 y <- rbind(y_train, y_test)
 subject <- rbind(subject_train, subject_test)
 
+#set features these as column' names in x
+features <- features[, 2]
+colnames(x) <- features
 
+#extracts only the measurements on the mean and standard deviation for each measurement
+x1 <- x[, grep("[Mm]ean|[Ss]td", colnames(x), value=TRUE)]
 
