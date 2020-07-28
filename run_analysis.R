@@ -68,3 +68,9 @@ x_set <- cbind(subject, x_set)
 #appropriately labels the data set with descriptive variable names
 colnames(x_set)[1] <- "Subject"
 colnames(x_set)[2] <- "Activity"
+
+#creates a data set with the average of each variable for each activity and each subject
+# for doing this we need to install package reshape2
+library(reshape2)
+ind_data <- melt(x_set, id=c("Subject", "Activity"))
+each_varoiable_data <- dcast(ind_data, Subject + Activity ~ variable, mean)
