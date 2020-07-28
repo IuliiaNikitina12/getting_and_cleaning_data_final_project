@@ -60,5 +60,11 @@ x1 <- x[, grep("[Mm]ean|[Ss]td", colnames(x), value=TRUE)]
   }
  }
 # 2. merge y and x sets
-x_set <- cbind(y, x)
+x_set <- cbind(y, x1)
 
+#merge subject and x_set
+x_set <- cbind(subject, x_set)
+
+#appropriately labels the data set with descriptive variable names
+colnames(x_set)[1] <- "Subject"
+colnames(x_set)[2] <- "Activity"
