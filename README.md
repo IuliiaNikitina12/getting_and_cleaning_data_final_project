@@ -1,4 +1,9 @@
+---
+author: "Iuliia Nikitina"
+---
 # getting_and_cleaning_data_final_project
+
+The data for the project: UCI HAR Dataset (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 There are 4 files in the repository:
 
